@@ -13,18 +13,20 @@ const prioritySelect = document.querySelector("#priority");
 const contextLabel = document.querySelector("#consult-context");
 let selectedPlan = "undecided";
 let entryPosition = "direct";
+let selectedCustomStyle = "";
 
 // Funnel steps, not confirmed inquiries. No free text or location is recorded.
 function trackStep(event, position) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event, cta_position: position, carport_plan: selectedPlan,
-    project_stage: stageSelect.value, consultation_priority: prioritySelect.value });
+    project_stage: stageSelect.value, consultation_priority: prioritySelect.value, custom_style: selectedCustomStyle });
 }
 
 function updatePlan() {
   if (!window.CarportPlanner) return;
-  const plan = window.CarportPlanner.createPlan({count: countSelect.value, stage: stageSelect.value, priority: prioritySelect.value});
+  const plan = window.CarportPlanner.createPlan({count: countSelect.value, stage: stageSelect.value, priority: prioritySelect.value, customStyle: selectedCustomStyle});
   selectedPlan = plan.selection.count;
+  selectedCustomStyle = plan.customStyle;
   message.textContent = plan.message;
   copyStatus.textContent = "";
   contextLabel.textContent = plan.context;
@@ -73,6 +75,8 @@ document.querySelectorAll("[data-consult-entry]").forEach((link) => {
     if (link.dataset.plan) {
       countSelect.value = link.dataset.plan;
     }
+    if (link.dataset.priority) prioritySelect.value = link.dataset.priority;
+    if (link.dataset.priority === "custom") selectedCustomStyle = link.dataset.customStyle || "";
     updatePlan();
     trackStep("consult_section_open", entryPosition);
   });
