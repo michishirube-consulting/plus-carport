@@ -1,1 +1,4 @@
-m«ëˆ§½©buªàºg§·õ,z»?‘«Z‘«Zü:ºg§¶ÏÂ¡×±ÿm6ëOuó÷â•ë)jË^u¼­…ë¬z¼oú.¶›­³úeºÇ®š+¶­†æÿ¦æå‰Ïë¡º-²ÜmRÆ y¶¬{®vçºh¢ø¥zŠ.µø¥y¶ëy©­æ¤zw(uçhºÚn¶êbÚ%Šw¬¡ù^aéƒu×œ¡×yÊz)éºØazZ]ŠÊek+aŠÉ²Æ z(§¦ëb›­~)^uçÚº[_¢»-v)è¢ëiºÚ.¶›­~)^uçÚº[_¢»-v‹­
+User-agent: *
+Allow: /plus-carport/
+
+Sitemap: https://michishirube-consulting.github.io/plus-carport/sitemap.xml
