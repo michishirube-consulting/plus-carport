@@ -47,7 +47,7 @@
       context: labels.length ? "選んだ内容：" + [...labels, styleLabel].filter(Boolean).join(" ／ ") : "",
       title: (selection.count === "undecided" ? "" : count.label + "の") + "相談で確認したいこと",
       points: [count.tip, stage.tip, customTips[customStyle] || priority.tip],
-      message: [count.message, stage.message, priority.message, styleLabel ? "参考ギャラリーの「" + styleLabel + "」が気になっています。" : "", "わが家に合うサイズと、工事込みの費用を相談したいです。"].filter(Boolean).join("\n")
+      message: [count.message, stage.message, priority.message, styleLabel ? "参考ギャラリーの「" + styleLabel + "」が気になっています。" : "", "愛車と使い方に合うプラン、工事込みの費用を相談したいです。"].filter(Boolean).join("\n")
     };
   }
   window.CarportPlanner = Object.freeze({ createPlan });
