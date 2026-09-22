@@ -21,6 +21,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--page); }
 body { margin: 0; color: var(--ink); font: 1rem/1.8 var(--sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { text-wrap: balance; line-break: strict; }
 img { display: block; width: 100%; max-width: 100%; height: auto; }
 figure, blockquote { margin: 0; }
 a { color: inherit; text-underline-offset: .2em; }
@@ -285,6 +286,39 @@ summary { cursor: pointer; color: var(--navy); font-weight: 700; }
   .custom-section { padding-right: 40px; padding-left: 40px; }
   .hero-intro, .hero-action-card, .expert-strip, .examples, .line-consult, .network-section, .guide-section, .cost-section, .check-section, .flow-section, .faq-section, .final-copy, .site-footer { padding-left: 40px; padding-right: 40px; }
   .hero-media { height: 340px; }
+}
+@media (max-width: 519px) {
+  body { font-size: .9375rem; line-height: 1.78; }
+  .site-header { min-height: 82px; padding: 8px 18px 10px; }
+  .brand-logo { width: 128px; }
+  .header-consult { max-width: 148px; padding: 7px 10px; font-size: .8125rem; line-height: 1.45; text-align: center; }
+  .hero-intro { padding: 22px 20px 20px; }
+  .eyebrow { margin-bottom: 10px; font-size: .8125rem; line-height: 1.65; }
+  .hero h1 { font-size: clamp(1.7rem, 7.25vw, 1.92rem); line-height: 1.34; letter-spacing: -.045em; }
+  .hero-lead { margin-top: 14px; font-size: .9375rem; line-height: 1.72; }
+  .hero-media { height: 196px; }
+  .hero-action-card { padding: 17px 18px 21px; }
+  .specialist-promise { padding: 22px 18px; line-height: 1.75; }
+  .expert-strip, .examples, .guide-section, .cost-section, .check-section, .flow-section, .faq-section, .line-consult, .network-section { padding: 44px 18px; }
+  .custom-section { padding: 44px 18px 34px; }
+  h2 { font-size: clamp(1.34rem, 5.75vw, 1.55rem); line-height: 1.48; letter-spacing: -.035em; }
+  .custom-section h2 { font-size: clamp(1.46rem, 6.25vw, 1.7rem); line-height: 1.46; letter-spacing: -.04em; }
+  .section-heading { margin-bottom: 21px; }
+  .section-heading > p:last-child:not(.section-number), .line-intro, .cost-intro { line-height: 1.75; }
+  .section-heading h2 br, .consult-heading h2 br, .case-body h3 br, .custom-body h3 br, .final-copy h2 br, .final-copy > p:not(:first-child) br { display: none; }
+  #examples-title br, #line-title br, #operation-title br, #size-title br, #cost-title br, #faq-title br, #final-cta-title br { display: initial; }
+  .case-body { padding: 20px 17px 13px; }
+  .case-body h3 { font-size: 1.0875rem; line-height: 1.58; letter-spacing: -.02em; }
+  .custom-body { padding: 18px 17px 12px; }
+  .custom-body h3 { font-size: 1.125rem; line-height: 1.58; letter-spacing: -.025em; }
+  .contact-heading { font-size: 1.25rem; line-height: 1.48; }
+  .contact-lead { margin-top: 10px; line-height: 1.72; }
+  .consult-path { padding: 17px; }
+  .consult-path h4 { font-size: 1rem; line-height: 1.55; }
+  .guide-cards h3 { font-size: 1.0625rem; line-height: 1.62; }
+  .check-list h3, .flow-list h3 { font-size: .975rem; line-height: 1.65; }
+  .faq-list summary { font-size: .9375rem; line-height: 1.7; }
+  .line-button { font-size: .9rem; }
 }
 @media (min-width: 800px) {
   .custom-section { padding: 64px; }
