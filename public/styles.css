@@ -156,6 +156,13 @@ h2 em { color: var(--blue); }
 .contact-heading { margin: 0; color: var(--navy); font-size: 1.5rem; line-height: 1.5; }
 .contact-lead { margin: 12px 0 20px; color: var(--ink); }
 .consult-context { margin: 0 0 14px; color: var(--blue); font-size: .875rem; }
+.consult-paths { display: grid; gap: 14px; }
+.consult-path { padding: 18px; background: #fff; border: 1px solid #c4deec; border-radius: 12px; }
+.consult-path-number { color: var(--blue); font: 700 .75rem/1 ui-monospace, monospace; letter-spacing: .08em; }
+.consult-path h4 { margin: 8px 0 0; color: var(--navy); font-size: 1.0625rem; line-height: 1.55; }
+.consult-path p { margin: 8px 0 16px; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
+.simulator-button { background: var(--blue); }
+.simulator-button:hover { background: #075577; }
 .consult-builder { margin-top: 26px; overflow: hidden; background: #fff; color: var(--ink); border: 1px solid #c4deec; border-radius: 12px; }
 .consult-builder > summary { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 18px 16px; font-size: .875rem; line-height: 1.7; }
 .consult-builder > summary::before { content: "+"; flex: none; font-size: 1.125rem; }

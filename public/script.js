@@ -82,6 +82,12 @@ document.querySelectorAll("[data-consult-entry]").forEach((link) => {
   });
 });
 
+document.querySelectorAll("[data-simulator-entry]").forEach((link) => {
+  link.addEventListener("click", () => {
+    trackStep("price_simulator_click", link.dataset.position || "unknown");
+  });
+});
+
 if (copyButton && navigator.clipboard?.writeText) {
   copyButton.hidden = false;
   copyButton.addEventListener("click", async () => {
@@ -100,7 +106,7 @@ function configureLineContact() {
   try {
     const config = JSON.parse(document.querySelector("#contact-config").textContent);
     lineUrl = new URL(config.lineUrl);
-    if (lineUrl.protocol !== "https:" || !["lin.ee", "line.me"].includes(lineUrl.hostname) || lineUrl.pathname === "/") return;
+    if (lineUrl.protocol !== "https:" || !["lin.ee", "line.me", "liff.line.me"].includes(lineUrl.hostname) || lineUrl.pathname === "/") return;
   } catch {
     return;
   }
