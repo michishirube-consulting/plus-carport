@@ -204,6 +204,8 @@ h2 em { color: var(--ink); }
 .faq-section { padding-top: 85px; background: #f6f3eb; }
 .faq-list { border-top: 1px solid var(--line); }
 .faq-list details { border: 0; border-bottom: 1px solid var(--line); }
+.faq-list summary { list-style: none; }
+.faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary { position: relative; padding: 21px 42px 21px 0; font-size: .93rem; font-weight: 700; }
 .faq-list summary::after { content: "+"; position: absolute; right: 0; top: 21px; color: var(--blue); font-size: 1.2rem; font-weight: 400; }
 .faq-list details[open] summary::after { content: "−"; }
@@ -283,7 +285,7 @@ h2 em { color: var(--ink); }
   .section-number { font-size: .66rem; }
   h2, .line-consult h2 { font-size: clamp(1.57rem, 6.25vw, 1.95rem); line-height: 1.49; }
   .custom-section h2 { font-size: clamp(1.62rem, 6.3vw, 2rem); }
-  .section-heading h2 br, #examples-title br, #line-title br, #operation-title br, #size-title br, #cost-title br, #faq-title br { display: none; }
+  #examples-title br, #line-title br, #operation-title br, #size-title br, #cost-title br, #faq-title br, #custom-title br { display: initial; }
   .section-heading > p:last-child:not(.section-number) { margin-top: 13px; font-size: .84rem; }
   .parking-diagram { margin-bottom: 27px; padding: 18px 13px 13px; }
   .parking-diagram h3 { font-size: 1.21rem; }
