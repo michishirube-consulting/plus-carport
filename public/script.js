@@ -114,6 +114,10 @@ function configureLineContact() {
   contactLink.removeAttribute("aria-disabled");
   contactStatus.hidden = true;
   contactLink.addEventListener("click", () => trackStep("line_outbound_click", entryPosition));
+  document.querySelectorAll("[data-line-direct]").forEach((link) => {
+    link.href = lineUrl.href;
+    link.addEventListener("click", () => trackStep("line_outbound_click", link.dataset.position || "unknown"));
+  });
 }
 
 configureLineContact();
