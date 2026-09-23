@@ -298,9 +298,10 @@
   .check-list h3 { font-size:.94rem; }
   .check-list p { font-size:.71rem; line-height:1.6; }
   .flow-list { grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px; }
-  .flow-list li { align-items:center; gap:4px; min-height:132px; padding:8px 3px; border:0; border-radius:0; background:transparent; text-align:center; }
+  .flow-list li { display:flex; flex-direction:column; align-items:center; gap:4px; min-height:132px; padding:8px 3px; border:0; border-radius:0; background:transparent; text-align:center; }
+  .flow-list li>div { width:100%; align-self:center; }
   .flow-list li:nth-child(4),.flow-list li:nth-child(3)::after { display:none; }
-  .flow-list li:not(:last-child)::after { top:53px; right:-11px; width:20px; height:20px; border:0; background:transparent; font-size:1.15rem; }
+  .flow-list li:nth-child(-n+2)::after { display:grid!important; top:53px; right:-11px; width:20px; height:20px; border:0; background:transparent; font-size:1.15rem; }
   .flow-list li>span { display:grid; place-items:center; width:25px; height:25px; border-radius:50%; background:var(--blue); color:#fff; font:700 .8rem/1 var(--serif); }
   .flow-icon { width:43px; height:43px; }
   .flow-list h3,.flow-list p { display:none; }
