@@ -9,7 +9,7 @@
     <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#536a68"/><stop offset="1" stop-color="#9eb0aa"/></linearGradient>
     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
     <g id="shrub"><circle r="25" fill="#c5d5bd"/><circle cx="-13" cy="-8" r="20" fill="#a8c19f"/><circle cx="16" cy="8" r="18" fill="#91ad89"/><circle cx="2" cy="13" r="15" fill="#dce6cf"/></g>
-    <marker id="entry-arrow" markerWidth="16" markerHeight="16" refX="8" refY="8" orient="auto"><path d="M8 1L15 13H1Z" fill="#2b5046"/></marker>
+    <marker id="entry-arrow" markerWidth="16" markerHeight="16" refX="8" refY="8" orient="auto"><path d="M8 1L15 13H1Z" fill="#3377bb"/></marker>
   </defs>
   <rect width="1000" height="610" fill="#fcfcf9"/>
   <rect width="1000" height="75" fill="#f0f2eb"/>
@@ -19,13 +19,13 @@
   <path d="M0 585H1000" stroke="#f7f8f4" stroke-width="2" stroke-dasharray="58 40" opacity=".7"/>
   <rect x="176" y="75" width="650" height="417" fill="#edf0e9"/>
   <rect x="205" y="97" width="590" height="369" fill="url(#paver)" stroke="#c4ccc3" stroke-width="2"/>
-  <path d="M205 97H795V466" fill="none" stroke="#657d71" stroke-width="5" opacity=".65"/>
-  <path d="M205 97V466H795" fill="none" stroke="#657d71" stroke-width="2" stroke-dasharray="9 8" opacity=".7"/>
+  <path d="M205 97H795V466" fill="none" stroke="#3377bb" stroke-width="5" opacity=".65"/>
+  <path d="M205 97V466H795" fill="none" stroke="#3377bb" stroke-width="2" stroke-dasharray="9 8" opacity=".7"/>
   <path d="M500 106V454" stroke="#d0d8d0" stroke-width="2" stroke-dasharray="10 9"/>
-  <rect x="196" y="91" width="17" height="17" fill="#294c43"/>
-  <rect x="787" y="91" width="17" height="17" fill="#294c43"/>
-  <rect x="196" y="456" width="17" height="17" fill="#294c43"/>
-  <rect x="787" y="456" width="17" height="17" fill="#294c43"/>
+  <rect x="196" y="91" width="17" height="17" fill="#2468aa"/>
+  <rect x="787" y="91" width="17" height="17" fill="#2468aa"/>
+  <rect x="196" y="456" width="17" height="17" fill="#2468aa"/>
+  <rect x="787" y="456" width="17" height="17" fill="#2468aa"/>
   <g opacity=".95"><use href="#shrub" x="135" y="168"/><use href="#shrub" x="122" y="292"/><use href="#shrub" x="138" y="410"/><use href="#shrub" x="870" y="166"/><use href="#shrub" x="884" y="296"/><use href="#shrub" x="868" y="414"/></g>
   <path d="M186 80V478M818 80V478" stroke="#cbd7c6" stroke-width="2"/>
   <g transform="translate(296 130)">
@@ -54,6 +54,6 @@
   </g>
   <path d="M475 245C450 250 434 276 436 311M522 245C546 250 561 275 563 311" fill="none" stroke="#748e79" stroke-width="2.5" stroke-dasharray="6 6"/>
   <path d="M494 450C493 464 495 479 500 492" fill="none" stroke="#657c6a" stroke-width="2" stroke-dasharray="7 8"/>
-  <path d="M500 567V510" stroke="#2b5046" stroke-width="6" stroke-linecap="round" marker-end="url(#entry-arrow)"/>
+  <path d="M500 567V510" stroke="#3377bb" stroke-width="6" stroke-linecap="round" marker-end="url(#entry-arrow)"/>
   <path d="M152 494C215 501 233 535 245 581M846 494C782 501 766 535 754 581" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="8 9" opacity=".8"/>
 </svg>

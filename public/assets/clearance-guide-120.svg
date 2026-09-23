@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">乗り降りと荷室の開閉を考える図</title>
+  <desc id="desc">カーポートの下に停めた車のドア、リアハッチ、柱の位置を示す概念図。寸法や設置可否を示す設計図ではありません。</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#dfeaf4" stroke-width="1"/></pattern>
+    <linearGradient id="roof" x2="0" y2="1"><stop stop-color="#f6fbff"/><stop offset="1" stop-color="#dcebf8"/></linearGradient>
+    <linearGradient id="car" x2="0" y2="1"><stop stop-color="#535c65"/><stop offset="1" stop-color="#26313d"/></linearGradient>
+  </defs>
+  <rect width="960" height="560" fill="#f8fbff"/>
+  <rect width="960" height="560" fill="url(#grid)" opacity=".7"/>
+  <rect y="438" width="960" height="122" fill="#e9edf0"/>
+  <path d="M0 438H960" stroke="#b7c8d7" stroke-width="3"/>
+  <path d="M75 141H875L839 111H121Z" fill="url(#roof)" stroke="#2469ad" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M121 141H839M155 111l32 30m108-30 19 30m114-30 7 30m116-30-6 30m111-30-19 30m106-30-31 30" stroke="#86afd2" stroke-width="4"/>
+  <path d="M118 141V438M842 141V438" stroke="#286fb7" stroke-width="16"/>
+  <path d="M118 141h37M805 141h37" stroke="#154975" stroke-width="9"/>
+  <path d="M213 371q24-71 80-96l88-21h176q67 14 89 92l29 13v51H194v-29q0-10 19-10Z" fill="url(#car)" stroke="#132d49" stroke-width="5"/>
+  <path d="M300 278q29-22 80-26h178q51 11 72 61H273q6-21 27-35Z" fill="#d9eaf8" stroke="#315978" stroke-width="4"/>
+  <path d="M429 253v61M276 313h353M402 318v43" fill="none" stroke="#55718b" stroke-width="4"/>
+  <circle cx="289" cy="409" r="34" fill="#202a34" stroke="#64727f" stroke-width="8"/>
+  <circle cx="579" cy="409" r="34" fill="#202a34" stroke="#64727f" stroke-width="8"/>
+  <circle cx="289" cy="409" r="11" fill="#ccd3da"/><circle cx="579" cy="409" r="11" fill="#ccd3da"/>
+  <path d="M407 322 345 355" stroke="#2469ad" stroke-width="6" stroke-linecap="round"/>
+  <path d="M407 322a86 86 0 0 0-85 93" fill="none" stroke="#33aaee" stroke-width="4" stroke-dasharray="9 9"/>
+  <path d="M645 350 707 262" stroke="#2469ad" stroke-width="7" stroke-linecap="round"/>
+  <path d="M648 350a102 102 0 0 0 58-89" fill="none" stroke="#d5ae27" stroke-width="4" stroke-dasharray="9 9"/>
+  <path d="M745 419V267" stroke="#74a0c5" stroke-width="3" stroke-dasharray="9 8"/>
+  <circle cx="311" cy="341" r="24" fill="#fff" stroke="#2469ad" stroke-width="3"/><text x="311" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#154975">1</text>
+  <circle cx="713" cy="248" r="24" fill="#fff" stroke="#2469ad" stroke-width="3"/><text x="713" y="257" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#154975">2</text>
+  <circle cx="842" cy="363" r="24" fill="#fff" stroke="#2469ad" stroke-width="3"/><text x="842" y="372" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#154975">3</text>
+  <path d="M881 438h53m-931 0h60" stroke="#98b99a" stroke-width="10" stroke-linecap="round"/>
+</svg>
