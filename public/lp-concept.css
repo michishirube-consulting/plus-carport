@@ -72,7 +72,9 @@ h2{font:700 clamp(2rem,4vw,3.4rem)/1.46 var(--serif);letter-spacing:-.065em}
 .decision-card--price{background:#eef3ed}
 .decision-card--line{background:#f8f3e8}
 .decision-symbol{display:grid;place-items:center;width:65px;height:65px;border-radius:50%;background:#fff;color:var(--green);font-size:2rem;line-height:1}
-.decision-symbol--chat{font-size:3rem;line-height:.8}
+.decision-symbol--chat{position:relative}
+.decision-symbol--chat::before{content:"";width:27px;height:20px;border:2px solid currentColor;border-radius:6px}
+.decision-symbol--chat::after{content:"";position:absolute;top:39px;left:20px;width:8px;height:8px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;background:#fff;transform:skewY(-28deg)}
 .decision-card-text{display:grid;gap:5px}
 .decision-card-text small{color:var(--green);font-size:.68rem;font-weight:800;letter-spacing:.13em}
 .decision-card-text strong{font-size:1.15rem;line-height:1.4}
@@ -274,7 +276,7 @@ h2{font:700 clamp(2rem,4vw,3.4rem)/1.46 var(--serif);letter-spacing:-.065em}
   .examples,.custom-section,.line-consult,.network-section,.guide-section,.cost-section,.check-section,.flow-section,.faq-section{padding:72px 24px}
   .decision-card{grid-template-columns:52px 1fr 14px;gap:12px;min-height:143px;padding:17px}
   .decision-symbol{width:50px;height:50px;font-size:1.55rem}
-  .decision-symbol--chat{font-size:2.3rem}
+  .decision-symbol--chat::after{top:31px;left:13px}
   .decision-card-text strong{font-size:.96rem}
   .decision-card-text>span{font-size:.72rem}
 }
@@ -314,7 +316,7 @@ h2{font:700 clamp(2rem,4vw,3.4rem)/1.46 var(--serif);letter-spacing:-.065em}
   .parking-diagram-copy{justify-content:flex-start;gap:5px 13px;padding:12px 0;font-size:.69rem}
   .diagram-note{font-size:.63rem;text-align:left}
   .decision-heading{margin:65px 0 20px}
-  .decision-heading h3{font-size:1.42rem}
+  .decision-heading h3{font-size:clamp(1.1rem,5.8vw,1.42rem)}
   .decision-grid{grid-template-columns:1fr;gap:9px}
   .decision-card{min-height:112px;padding:14px 17px}
   .decision-card-text strong{font-size:1.04rem}
