@@ -1,6 +1,19 @@
 /* 2026-09-24: complete the remaining visual system without adding decorative images everywhere. */
 .journey-reference { display:none; }
 
+/* Show the actual decision context beside the accountable handoff diagram. */
+.network-story { grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr); align-items:stretch; gap:0; padding:0; background:#0b477d; }
+.network-story-lead { position:relative; display:flex; align-items:flex-end; min-height:390px; overflow:hidden; background:#194f7b; }
+.network-story-lead::after { content:""; position:absolute; inset:34% 0 0; background:linear-gradient(transparent,#062b4de8); pointer-events:none; }
+.network-story-lead>img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:58% center; }
+.network-story-copy { position:relative; z-index:1; width:100%; padding:clamp(22px,3vw,36px); }
+.network-story-copy>span { display:block; color:#c5e9fb; font-size:.65rem; font-weight:800; letter-spacing:.2em; }
+.network-story-copy strong { display:block; margin-top:9px; color:#fff; font:700 clamp(1.42rem,2vw,2.1rem)/1.4 var(--serif); letter-spacing:-.04em; }
+.network-story-copy p { margin:10px 0 0; color:#e9f6fc; font-size:.82rem; line-height:1.65; }
+.network-story-copy small { display:block; margin-top:10px; color:#e0eaf0; font-size:.62rem; }
+.network-route { align-self:center; margin:clamp(22px,2.5vw,36px); }
+.network-route li:not(.network-route-handoff) { min-height:240px; }
+
 /* The decision point should look like two genuinely different paths. */
 .line-consult .consult-action { background:#fff; }
 .line-consult .consult-paths { gap:18px; }
@@ -70,6 +83,10 @@
   .line-consult .consult-action { margin-top:36px; }
 }
 @media (max-width:900px) {
+  .network-story { grid-template-columns:1fr; }
+  .network-story-lead { min-height:300px; }
+  .network-route { margin:20px; }
+  .network-route li:not(.network-route-handoff) { min-height:0; }
   .consult-next { grid-template-columns:1fr; }
   .line-consult .consult-paths { grid-template-columns:1fr; }
   .line-consult .consult-path { min-height:250px; }
@@ -79,6 +96,11 @@
   .faq-aside figure { height:100%; aspect-ratio:auto; }
 }
 @media (max-width:640px) {
+  .network-story-lead { min-height:275px; }
+  .network-story-copy { padding:18px; }
+  .network-story-copy strong { font-size:1.48rem; }
+  .network-story-copy p { font-size:.73rem; }
+  .network-route { margin:13px; }
   .consult-next { gap:17px; margin-top:17px; padding:19px 16px; }
   .consult-next-title>strong { font-size:1.2rem; }
   .consult-next ol { grid-template-columns:1fr; gap:0; border-top:1px solid #c8dfed; }
