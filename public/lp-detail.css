@@ -81,10 +81,11 @@
   .reason-panel { padding:23px 19px; }
   .reason-panel h3 { font-size:1.37rem; }
   .reason-panel-heading>p { font-size:.8rem; }
-  .reason-price-visual { min-height:162px; margin-top:17px; padding:10px; }
+  .reason-price-visual { gap:7px; min-height:162px; margin-top:17px; padding:8px; }
   .reason-cost-stack span { min-height:36px; font-size:.68rem; }
-  .reason-total { min-height:110px; }
-  .reason-total strong { font-size:1.03rem; }
+  .reason-price-arrow { font-size:1.45rem; }
+  .reason-total { width:46%; min-height:110px; padding:8px 4px; }
+  .reason-total strong { font-size:.87rem; white-space:nowrap; }
   .reason-check-grid { margin-top:17px; }
   .reason-check-grid li { min-height:76px; font-size:.66rem; }
   .reason-link { width:100%; justify-content:center; }
