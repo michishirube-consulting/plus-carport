@@ -138,8 +138,9 @@ document.querySelectorAll("[data-controls-for]").forEach((controls) => {
     next.disabled = index === slides.length - 1;
   };
   const goTo = (index) => {
-    track.scrollTo({ left: slidePosition(slides[index]), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    window.setTimeout(refresh, 350);
+    track.scrollTo({ left: slidePosition(slides[index]), behavior: track.id === "line-journey" || matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    refresh();
+    if (track.id !== "line-journey") window.setTimeout(refresh, 350);
   };
   previous.addEventListener("click", () => goTo(Math.max(0, currentIndex() - 1)));
   next.addEventListener("click", () => goTo(Math.min(slides.length - 1, currentIndex() + 1)));
