@@ -53,7 +53,7 @@ document.querySelectorAll("[data-intent-link]").forEach(link => link.addEventLis
   if (link.dataset.plan) countSelect.value = link.dataset.plan;
   if (link.dataset.priority) prioritySelect.value = link.dataset.priority;
   updatePlan();
-  trackStep("content_jump", "hero-shortcut");
+  trackStep("content_jump", link.dataset.position || "unknown");
 }));
 
 function updateStickyCta() {
