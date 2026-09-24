@@ -1,0 +1,68 @@
+/* LP / LINE journey: editorial explanation matched to the live consultation UI. */
+.line-consult { display:block; background:#f7fbfd; border-top:1px solid #d4e4ee; }
+.line-consult .consult-heading { max-width:1200px; margin:0 auto; }
+.line-consult .consult-heading>.section-number,
+.line-consult #line-title,
+.line-consult .line-intro { position:static; width:auto; height:auto; overflow:visible; clip-path:none; white-space:normal; }
+.line-consult #line-title { margin-top:10px; max-width:850px; }
+.line-consult .line-intro { max-width:680px; margin-top:15px; font-size:.96rem; line-height:1.8; }
+.line-consult .visual-journey { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:34px 0 0; padding:0; list-style:none; }
+.line-consult .visual-journey li { display:flex; min-width:0; min-height:0; flex-direction:column; padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
+.line-consult .journey-label { display:flex; align-items:flex-start; gap:10px; min-height:61px; }
+.line-consult .journey-label>span { display:grid; flex:none; place-items:center; width:39px; height:39px; border-radius:50%; background:#176cb9; color:#fff; font:700 .88rem/1 var(--serif); }
+.line-consult .journey-label strong { display:block; padding-top:1px; color:#102c50; font-size:.94rem; }
+.line-consult .journey-label p { margin:4px 0 0; color:#586b7d; font-size:.72rem; }
+.journey-scene { display:flex; min-height:310px; flex:1; flex-direction:column; overflow:hidden; border:1px solid #c9deeb; border-top:3px solid #176cb9; border-radius:3px; background:#fff; color:#102c50; }
+.journey-scene-eyebrow { display:block; color:#176cb9; font-size:.63rem; font-weight:800; letter-spacing:.08em; }
+.journey-scene--choice { padding:19px 13px 15px; }
+.journey-scene--choice>strong { display:block; margin:8px 0 15px; font:700 1.15rem/1.5 var(--serif); letter-spacing:-.03em; }
+.journey-option { display:flex; align-items:center; gap:9px; min-height:51px; margin-top:6px; padding:6px 8px; border:1px solid #d7e6ef; border-radius:6px; background:#fff; color:#173b59; font-size:.72rem; font-weight:700; }
+.journey-option--active { border-color:#176cb9; background:#edf7fc; }
+.journey-option-icon { display:grid; place-items:center; width:23px; height:23px; flex:none; border-radius:50%; background:#eaf4fb; color:#176cb9; font-size:.9rem; }
+.journey-option span:nth-child(2) { display:block; flex:1; }
+.journey-option small { display:block; margin-top:1px; color:#62778a; font-size:.55rem; font-weight:500; }
+.journey-option b { color:#176cb9; }
+.journey-scene--photo { position:relative; background:#e9f3f8; }
+.journey-scene--photo>img { display:block; width:100%; height:165px; object-fit:cover; object-position:center 57%; }
+.journey-scene--photo>div { flex:1; padding:17px 15px; background:#fff; }
+.journey-scene--photo strong,.journey-scene--compare strong,.journey-scene--handoff strong { display:block; margin-top:7px; font:700 1.03rem/1.48 var(--serif); letter-spacing:-.03em; }
+.journey-scene--photo p,.journey-scene--compare p,.journey-scene--handoff p { margin-top:9px; color:#51677a; font-size:.7rem; line-height:1.65; }
+.journey-scene--compare { padding:17px 13px; }
+.journey-compare-images { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:14px; }
+.journey-compare-images img { display:block; width:100%; height:108px; object-fit:cover; }
+.journey-scene--compare strong { margin-top:17px; }
+.journey-scene--handoff { padding:19px 15px; background:#fafdff; }
+.journey-scene--handoff>strong { margin-top:12px; font-size:1.13rem; }
+.journey-handoff-check { display:grid; gap:6px; margin-top:auto; padding-top:20px; }
+.journey-handoff-check span { margin-bottom:2px; color:#176cb9; font-size:.62rem; font-weight:800; letter-spacing:.08em; }
+.journey-handoff-check b { padding:8px 10px; border-left:2px solid #3ba7e5; background:#edf6fb; font-size:.7rem; }
+.line-consult .journey-disclosure { max-width:1200px; margin:12px auto 0; font-size:.68rem; }
+.line-consult .consult-caveat { max-width:1200px; margin:7px auto 0; }
+.line-consult .consult-action { max-width:1200px; margin:48px auto 0; padding-top:34px; border-top:1px solid #bdd4e5; }
+
+/* The daily-use explanation is a set of concrete moments, not another generic feature list. */
+.guide-feature-copy .guide-living-notes { display:block; width:100%; margin:23px 0 0; padding:0; list-style:none; border-top:1px solid #c9ddea; }
+.guide-feature-copy .guide-living-notes li { display:block; padding:14px 0 13px; border-bottom:1px solid #c9ddea; }
+.guide-feature-copy .guide-living-notes span { display:block; color:#176cb9; font:800 .68rem/1.5 sans-serif; letter-spacing:.08em; }
+.guide-living-notes strong { display:block; margin-top:5px; color:#102c50; font:700 .94rem/1.55 var(--serif); }
+.guide-living-notes p { margin:4px 0 0; color:#55697b; font-size:.73rem; line-height:1.7; }
+
+@media(max-width:960px) and (min-width:641px) {
+  .line-consult .visual-journey { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .journey-scene { min-height:300px; }
+}
+@media(max-width:640px) {
+  .line-consult #line-title { font-size:clamp(1.85rem,7.4vw,2.3rem); }
+  .line-consult .line-intro { margin-top:13px; font-size:.8rem; line-height:1.75; }
+  .line-consult .visual-journey { display:flex; gap:12px; margin:18px -20px 0; padding:0 20px 16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:20px; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+  .line-consult .visual-journey::-webkit-scrollbar { display:none; }
+  .line-consult .visual-journey li { flex:0 0 min(83vw,320px); width:min(83vw,320px); min-height:0; scroll-snap-align:start; }
+  .line-consult .journey-label { min-height:61px; }
+  .journey-scene { min-height:316px; }
+  .journey-scene--photo>img { height:170px; }
+  .line-consult .consult-action { margin-top:31px; padding-top:28px; }
+  .guide-feature-copy .guide-living-notes { margin-top:19px; }
+  .guide-feature-copy .guide-living-notes li { padding:11px 0; }
+  .guide-living-notes strong { font-size:.84rem; }
+  .guide-living-notes p { font-size:.7rem; }
+}
