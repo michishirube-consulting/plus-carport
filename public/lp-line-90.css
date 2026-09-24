@@ -1,0 +1,48 @@
+/* One clear LINE handoff: keep the illustrated sequence and the real entry point aligned. */
+.line-consult .journey-entry-note {
+  display:grid;
+  grid-template-columns:48px minmax(0,1fr);
+  gap:2px 16px;
+  max-width:1200px;
+  margin:25px auto 0;
+  padding:16px 21px;
+  border:1px solid #b8d7e9;
+  border-left:4px solid #d9b646;
+  background:#fff;
+  color:#102c50;
+  box-shadow:0 8px 25px #123f620d;
+}
+.line-consult .journey-entry-note>span:first-child {
+  display:grid;
+  grid-row:1 / span 2;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#176cb9;
+  color:#fff;
+  font:700 1rem/1 var(--serif);
+}
+.line-consult .journey-entry-note strong { align-self:end; font-size:.94rem; line-height:1.5; }
+.line-consult .journey-entry-note>span:last-child { color:#536b7e; font-size:.77rem; line-height:1.55; }
+.line-consult .visual-journey { margin-top:20px; }
+.consult-assurance {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin:22px 0 5px;
+  border-top:1px solid #b9d4e6;
+  border-bottom:1px solid #b9d4e6;
+  background:#f4f9fc;
+}
+.consult-assurance span { display:flex; align-items:center; gap:10px; padding:15px 18px; color:#143657; font-size:.78rem; font-weight:700; line-height:1.45; }
+.consult-assurance span+span { border-left:1px solid #c5deec; }
+.consult-assurance b { color:#176cb9; font:700 .92rem/1 var(--serif); }
+@media(max-width:640px) {
+  .line-consult .journey-entry-note { grid-template-columns:36px minmax(0,1fr); gap:1px 11px; margin-top:19px; padding:13px 14px; }
+  .line-consult .journey-entry-note>span:first-child { width:32px; height:32px; font-size:.8rem; }
+  .line-consult .journey-entry-note strong { font-size:.82rem; }
+  .line-consult .journey-entry-note>span:last-child { font-size:.7rem; }
+  .consult-assurance { grid-template-columns:1fr; }
+  .consult-assurance span { padding:10px 13px; font-size:.75rem; }
+  .consult-assurance span+span { border-left:0; border-top:1px solid #c5deec; }
+}
