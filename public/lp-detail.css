@@ -1,4 +1,10 @@
 /* 2026-09-24: clearer reasons, architectural planning visuals, compact mobile browsing. */
+.hero-early-action { display:flex; align-items:center; gap:16px; margin-top:14px; }
+.hero-early-action a { display:inline-flex; align-items:center; justify-content:space-between; gap:28px; min-height:47px; padding:10px 19px; border-radius:4px; background:var(--blue); color:#fff; font-size:.84rem; font-weight:700; text-decoration:none; box-shadow:0 8px 18px #176cb929; transition:background .2s,transform .2s; }
+.hero-early-action a:hover { background:#0e579b; transform:translateY(-2px); }
+.hero-early-action a:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+.hero-early-action a span { font-size:1.1rem; }
+.hero-early-action>span { color:#52657a; font-size:.72rem; line-height:1.5; }
 .parking-diagram-visual { border:1px solid #d3e2ed; }
 .parking-callout { max-width:190px; border-width:1.5px; }
 .parking-callout strong,.parking-callout small { display:block; }
@@ -98,6 +104,7 @@
 }
 
 @media(max-width:850px){
+  .hero-early-action { display:none; }
   .guide-feature { grid-template-columns:1fr; }
   .guide-photo-stage img { min-height:0; aspect-ratio:1.5; }
 }
