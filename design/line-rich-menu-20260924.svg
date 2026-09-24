@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="843" viewBox="0 0 2500 843">
+  <rect width="2500" height="843" fill="#f5f9fc"/>
+  <rect width="2500" height="112" fill="#0d3158"/>
+  <rect width="1620" height="9" y="103" fill="#1774bd"/>
+  <rect width="520" height="9" x="1620" y="103" fill="#d9b948"/>
+  <rect width="360" height="9" x="2140" y="103" fill="#168259"/>
+  <text x="86" y="74" fill="#ffffff" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="52" font-weight="800" letter-spacing="3">plus CARPORT</text>
+  <text x="2414" y="73" fill="#d2e5f2" text-anchor="end" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="35" font-weight="700" letter-spacing="3">暮らしに、ちょうどいいカーポートを。</text>
+
+  <rect y="112" width="833" height="731" fill="#eaf5f1"/>
+  <rect x="833" y="112" width="834" height="731" fill="#f5f9fc"/>
+  <rect x="1667" y="112" width="833" height="731" fill="#fffaf0"/>
+  <path d="M833 112v731M1667 112v731" stroke="#cfdee8" stroke-width="3"/>
+
+  <circle cx="416" cy="306" r="122" fill="#ffffff" stroke="#b8ddd0" stroke-width="5"/>
+  <path d="M346 264h140a29 29 0 0 1 29 29v73a29 29 0 0 1-29 29h-73l-47 37v-37h-20a29 29 0 0 1-29-29v-73a29 29 0 0 1 29-29z" fill="none" stroke="#168259" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M369 317h95M369 351h63" stroke="#168259" stroke-width="12" stroke-linecap="round"/>
+  <text x="416" y="529" fill="#0d3158" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="96" font-weight="800">無料で相談</text>
+  <text x="416" y="612" fill="#3c6172" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="46" font-weight="600">車の台数、ひとつから</text>
+  <path d="M331 717h170m-49-35 49 35-49 35" fill="none" stroke="#168259" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="1250" cy="306" r="122" fill="#ffffff" stroke="#c5dceb" stroke-width="5"/>
+  <rect x="1173" y="231" width="154" height="155" rx="11" fill="none" stroke="#176cb9" stroke-width="13"/>
+  <path d="M1201 270h98M1201 303h74M1201 336h98" stroke="#176cb9" stroke-width="11" stroke-linecap="round"/>
+  <text x="1250" y="529" fill="#0d3158" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="96" font-weight="800">費用の考え方</text>
+  <text x="1250" y="612" fill="#3c6172" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="46" font-weight="600">本体と工事を分けて確認</text>
+  <path d="M1165 717h170m-49-35 49 35-49 35" fill="none" stroke="#176cb9" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="2084" cy="306" r="122" fill="#ffffff" stroke="#ecdca7" stroke-width="5"/>
+  <circle cx="2084" cy="306" r="74" fill="none" stroke="#a07c28" stroke-width="13"/>
+  <path d="M2060 282a26 26 0 1 1 35 27c-12 5-12 15-12 24" fill="none" stroke="#a07c28" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="2084" cy="353" r="8" fill="#a07c28"/>
+  <text x="2084" y="529" fill="#0d3158" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="96" font-weight="800">よくある質問</text>
+  <text x="2084" y="612" fill="#3c6172" text-anchor="middle" font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" font-size="46" font-weight="600">相談前の不安を解消</text>
+  <path d="M1999 717h170m-49-35 49 35-49 35" fill="none" stroke="#a07c28" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
