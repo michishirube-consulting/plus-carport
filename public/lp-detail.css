@@ -102,6 +102,14 @@
   .guide-photo-stage img { min-height:0; aspect-ratio:1.5; }
 }
 @media(max-width:640px){
+  .visual-journey { display:flex; gap:12px; margin:23px -20px 0; padding:0 20px 14px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+  .visual-journey::-webkit-scrollbar { display:none; }
+  .visual-journey li { position:relative; flex:0 0 min(84vw,320px); width:min(84vw,320px); aspect-ratio:.61; overflow:hidden; border:1px solid #d7e4ee; border-radius:8px; background-image:url("assets/line-journey-reference-20260924.jpg"); background-repeat:no-repeat; background-size:400% auto; background-position-y:bottom; scroll-snap-align:start; box-shadow:0 9px 23px #0b376313; }
+  .visual-journey li:nth-child(1) { background-position-x:0%; }
+  .visual-journey li:nth-child(2) { background-position-x:33.333%; }
+  .visual-journey li:nth-child(3) { background-position-x:66.667%; }
+  .visual-journey li:nth-child(4) { background-position-x:100%; }
+  .visual-journey .journey-label,.visual-journey .journey-phone { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
   .reasons-section { padding:58px 20px; }
   .reasons-heading h2 { font-size:clamp(1.8rem,7vw,2.2rem); }
   .reason-panels { grid-template-columns:1fr; gap:10px; }
