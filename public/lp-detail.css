@@ -82,6 +82,17 @@
 .guide-cards summary:focus-visible,.carousel-controls button:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
 .check-list li { box-shadow:0 10px 22px #0b37630c; }
 .faq-list details[open] { border-color:#9ac8e7; background:#fbfdff; }
+.section-reference-artwork { display:none; margin:0 auto; }
+.section-reference-artwork img { display:block; width:100%; height:auto; }
+
+@media(min-width:641px){
+  .section-reference-artwork { display:block; overflow:hidden; border:1px solid #d7e4ee; border-radius:6px; background:#fff; box-shadow:0 14px 38px #0b376310; }
+  .section-reference-artwork--journey { max-width:814px; margin-top:26px; }
+  .section-reference-artwork--checks { max-width:798px; }
+  .line-consult .consult-heading>.section-number,.line-consult #line-title,.line-consult .line-intro,.check-section>.section-heading { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+  .line-consult .visual-journey,.check-section .check-list,.check-section .carousel-controls { display:none; }
+  .line-consult .journey-disclosure { max-width:814px; margin-right:auto; margin-left:auto; }
+}
 
 @media(max-width:850px){
   .guide-feature { grid-template-columns:1fr; }
