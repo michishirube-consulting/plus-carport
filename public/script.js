@@ -121,6 +121,37 @@ function configureLineContact() {
 }
 
 configureLineContact();
+document.querySelectorAll("[data-controls-for]").forEach((controls) => {
+  const track = document.getElementById(controls.dataset.controlsFor);
+  if (!track) return;
+  const slides = [...track.children];
+  const previous = controls.querySelector("[data-carousel-prev]");
+  const next = controls.querySelector("[data-carousel-next]");
+  const output = controls.querySelector("output");
+  const slidePosition = (slide) => slide.offsetLeft - slides[0].offsetLeft;
+  const currentIndex = () => slides.reduce((best, slide, index) =>
+    Math.abs(slidePosition(slide) - track.scrollLeft) < Math.abs(slidePosition(slides[best]) - track.scrollLeft) ? index : best, 0);
+  const refresh = () => {
+    const index = currentIndex();
+    output.textContent = `${index + 1} / ${slides.length}`;
+    previous.disabled = index === 0;
+    next.disabled = index === slides.length - 1;
+  };
+  const goTo = (index) => {
+    track.scrollTo({ left: slidePosition(slides[index]), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    window.setTimeout(refresh, 350);
+  };
+  previous.addEventListener("click", () => goTo(Math.max(0, currentIndex() - 1)));
+  next.addEventListener("click", () => goTo(Math.min(slides.length - 1, currentIndex() + 1)));
+  track.addEventListener("scroll", refresh, { passive: true });
+  track.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    goTo(Math.max(0, Math.min(slides.length - 1, currentIndex() + (event.key === "ArrowRight" ? 1 : -1))));
+  });
+  window.addEventListener("resize", refresh);
+  refresh();
+});
 const mobileMenu = document.querySelector(".mobile-menu");
 mobileMenu?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => { mobileMenu.open = false; });
