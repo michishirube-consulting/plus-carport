@@ -2,6 +2,8 @@
 
 プラスカーポートの静的ランディングページです。ビルドは不要で、GitHub Pagesからそのまま公開できます。
 
+**次の担当者は最初に[引継ぎメモ](HANDOFF.md)を読んでください。** 価格シミュレーター・LIFF相談のソースと全体引継ぎ書は、別の非公開リポジトリ[`plus-carport-consult`](https://github.com/michishirube-consulting/plus-carport-consult)にあります。
+
 公開サイト：https://michishirube-consulting.github.io/plus-carport/
 
 運営者は、みちしるべコンサルティング株式会社です。プラスカーポートはWeb集客・相談受付・条件整理を担う窓口であり、現地調査、見積もり、契約、施工、保証・アフターサービスは、地域の加盟店・提携施工店が担当します。現在の相談対応エリアは、福岡県を中心とした九州エリア、東海エリア、関東エリアです。
@@ -33,15 +35,15 @@ git push -u origin main
 
 現在は確認用です。GitHubへアップロードしても、次の設定が終わるまではHTMLの `noindex` により検索エンジンへ登録されない構成です。クローラーが `noindex` を確認できるよう、`robots.txt` ではページのクロール自体は許可しています。
 
-### 1. 公式LINE URL
+### 1. LINE相談 URL
 
-`public/index.html` の次の箇所へ、正式なLINE URLを設定します。
+`public/index.html` の連絡先設定は、現在LIFFの相談画面を開きます。
 
 ```html
-<script id="contact-config" type="application/json">{"lineUrl":"https://lin.ee/正式なID"}</script>
+<script id="contact-config" type="application/json">{"lineUrl":"https://liff.line.me/2008296342-NND2cbRC?mode=direct"}</script>
 ```
 
-使用できるのは、パスを含む `https://lin.ee/...` または `https://line.me/...` です。空欄の間はLINEボタンが無効になります。
+LIFF IDや遷移先を変更する場合は、LINE Developersと別リポジトリの相談アプリ側の設定も合わせて確認してください。LINE公式の友だち追加・UTAGEの配信設定とは別です。
 
 ### 2. 公開前に確定する事業情報
 
