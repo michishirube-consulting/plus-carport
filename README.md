@@ -14,22 +14,7 @@
 
 ## GitHub Pagesで公開する
 
-1. GitHubで新しいリポジトリを作成します。既定ブランチ名は `main` にします。
-2. このフォルダの中身をすべてリポジトリへ追加し、`main` へプッシュします。
-3. GitHubのリポジトリで **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定します。
-4. **Actions** タブで `Deploy Plus Carport to GitHub Pages` が完了すると、PagesのURLが表示されます。
-
-公開処理は `.github/workflows/pages.yml` が行い、`public/` の中だけを配信します。
-
-Gitコマンドで登録する場合は、リポジトリ作成後に次を実行します。`YOUR-ACCOUNT` と `YOUR-REPOSITORY` は実際の名前へ置き換えてください。
-
-```sh
-git init -b main
-git add .
-git commit -m "Initial Plus Carport site"
-git remote add origin https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY.git
-git push -u origin main
-```
+既存リポジトリの`main`へプッシュすると、`.github/workflows/pages.yml`が`public/`をGitHub Pagesへ配信します。新しいリポジトリの作成やPages設定のやり直しは不要です。変更前後は[引継ぎメモ](HANDOFF.md)の確認事項に沿って、特にスマホ表示・LINEリンク・計測を点検してください。GitHubの**Actions**で`Deploy Plus Carport to GitHub Pages`の結果を確認します。
 
 ## 一般公開前に必ず設定する項目
 
