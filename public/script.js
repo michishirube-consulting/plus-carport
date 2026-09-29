@@ -4,57 +4,12 @@ const consultSection = document.querySelector("#line-consult");
 const finalCtaSection = document.querySelector(".final-cta");
 const contactLink = document.querySelector("#line-contact");
 const contactStatus = document.querySelector("#contact-status");
-const message = document.querySelector("#consult-message");
-const copyButton = document.querySelector("#copy-message");
-const copyStatus = document.querySelector("#copy-status");
-const countSelect = document.querySelector("#car-count");
-const stageSelect = document.querySelector("#project-stage");
-const prioritySelect = document.querySelector("#priority");
-const contextLabel = document.querySelector("#consult-context");
-let selectedPlan = "undecided";
-let entryPosition = "direct";
-let selectedCustomStyle = "";
 
 // Funnel steps, not confirmed inquiries. No free text or location is recorded.
-function trackStep(event, position) {
+function trackStep(event, position, plan) {
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event, cta_position: position, carport_plan: selectedPlan,
-    project_stage: stageSelect.value, consultation_priority: prioritySelect.value, custom_style: selectedCustomStyle });
+  window.dataLayer.push({ event, cta_position: position || "unknown", carport_plan: plan || "undecided" });
 }
-
-function updatePlan() {
-  if (!window.CarportPlanner) return;
-  const plan = window.CarportPlanner.createPlan({count: countSelect.value, stage: stageSelect.value, priority: prioritySelect.value, customStyle: selectedCustomStyle});
-  selectedPlan = plan.selection.count;
-  selectedCustomStyle = plan.customStyle;
-  message.textContent = plan.message;
-  copyStatus.textContent = "";
-  contextLabel.textContent = plan.context;
-  contextLabel.hidden = !plan.context;
-  document.querySelector("#plan-result-title").textContent = plan.title;
-  const points = document.querySelector("#plan-points");
-  points.replaceChildren(...plan.points.map((text) => {
-    const li = document.createElement("li");
-    li.textContent = text;
-    return li;
-  }));
-}
-
-if (window.CarportPlanner) {
-  updatePlan();
-  document.querySelector("#builder-fields").hidden = false;
-  [countSelect, stageSelect, prioritySelect].forEach(select => select.addEventListener("change", () => {
-    updatePlan();
-    trackStep("consult_options_change", "optional-planner");
-  }));
-}
-
-document.querySelectorAll("[data-intent-link]").forEach(link => link.addEventListener("click", () => {
-  if (link.dataset.plan) countSelect.value = link.dataset.plan;
-  if (link.dataset.priority) prioritySelect.value = link.dataset.priority;
-  updatePlan();
-  trackStep("content_jump", link.dataset.position || "unknown");
-}));
 
 function updateStickyCta() {
   if (!stickyCta || !heroAction || !consultSection) return;
@@ -69,38 +24,15 @@ function updateStickyCta() {
   stickyCta.inert = !shouldShow;
 }
 
-document.querySelectorAll("[data-consult-entry]").forEach((link) => {
-  link.addEventListener("click", () => {
-    entryPosition = link.dataset.position || "unknown";
-    if (link.dataset.plan) {
-      countSelect.value = link.dataset.plan;
-    }
-    if (link.dataset.priority) prioritySelect.value = link.dataset.priority;
-    if (link.dataset.priority === "custom") selectedCustomStyle = link.dataset.customStyle || "";
-    updatePlan();
-    trackStep("consult_section_open", entryPosition);
-  });
-});
-
 document.querySelectorAll("[data-simulator-entry]").forEach((link) => {
   link.addEventListener("click", () => {
-    trackStep("price_simulator_click", link.dataset.position || "unknown");
+    trackStep("price_simulator_click", link.dataset.position);
   });
 });
 
-if (copyButton && navigator.clipboard?.writeText) {
-  copyButton.hidden = false;
-  copyButton.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(message.innerText.trim());
-      copyStatus.textContent = "コピーしました。LINEに貼り付けて、分かれば市区町村・車種を添えてください。";
-      trackStep("consult_message_copy", entryPosition);
-    } catch {
-      copyStatus.textContent = "コピーできませんでした。上の文章を選択してコピーしてください。";
-    }
-  });
-}
-
+// Every LINE button opens the LIFF consultation directly. data-plan tells the
+// consultation form which card the visitor came from (for example plan=two-car),
+// so the visitor does not have to choose the same thing again.
 function configureLineContact() {
   let lineUrl;
   try {
@@ -110,13 +42,21 @@ function configureLineContact() {
   } catch {
     return;
   }
-  contactLink.href = lineUrl.href;
-  contactLink.removeAttribute("aria-disabled");
-  contactStatus.hidden = true;
-  contactLink.addEventListener("click", () => trackStep("line_outbound_click", entryPosition));
+  const hrefFor = (plan) => {
+    const url = new URL(lineUrl.href);
+    if (plan && /^[a-z-]{2,24}$/.test(plan)) url.searchParams.set("plan", plan);
+    return url.href;
+  };
+  if (contactLink) {
+    contactLink.href = hrefFor("");
+    contactLink.removeAttribute("aria-disabled");
+    contactLink.addEventListener("click", () => trackStep("line_outbound_click", contactLink.dataset.position));
+  }
+  if (contactStatus) contactStatus.hidden = true;
   document.querySelectorAll("[data-line-direct]").forEach((link) => {
-    link.href = lineUrl.href;
-    link.addEventListener("click", () => trackStep("line_outbound_click", link.dataset.position || "unknown"));
+    const plan = link.dataset.plan || "";
+    link.href = hrefFor(plan);
+    link.addEventListener("click", () => trackStep("line_outbound_click", link.dataset.position, plan));
   });
 }
 
