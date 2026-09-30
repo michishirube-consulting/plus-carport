@@ -12,6 +12,14 @@
 
 2026-09-23：120点ステップとして、ロゴ由来の青を軸にスマホと下層セクションのデザインを統一しました。`public/lp-120.css` は既存CSSの後から読み込む追加レイヤーです。図解は `public/assets/clearance-guide-120.svg`、最後の暮らしの写真はオリジナルのAI生成イメージ `public/assets/final-lifestyle-120.jpg` です。実施工写真・実際の顧客の写真とは表示していません。変更前のローカルコピーは隣の `public-backup-before-120/` に保存してあります。GitHub上ではこの更新の直前コミットへ戻すことで復元できます。
 
+2026-09-29：構成と導線を整理しました。変更前の状態は、この変更の直前のコミットへ戻すことで復元できます。
+
+- LINE のボタンはすべて LIFF の相談画面を直接開きます（以前は多くのボタンがページ途中の相談欄へ移動するだけでした）。カードから押した場合は `plan=two-car` のように見ていたプランを付けて渡します（下の「LINE相談 URL」）。
+- 重複していた「設置費用の考え方」は「選ばれる理由」（`#cost`）に、「相談から施工まで」は「相談・施工の運営体制」にまとめました。「相談文をつくってコピーする」欄と `planner.js` は、LIFF の相談画面と二重になるため外しました。
+- ファーストビューのスマホの大見出しを PC と同じ「停めやすさから、カーポートを選ぶ。」に、2つ目のボタンを価格シミュレーターへの直接リンクにしました。
+- 見出し・ボタン・短い説明文には、文節の切れ目に改行候補の `<wbr>` を入れています（iPhone の Safari で「聞かせてくださ／い。」のような改行を防ぐため）。文言を変えたら `tools/add-wbr.py` を実行し直してください。
+- 11枚あった CSS は読み込み順どおり `public/lp.css` 1枚にまとめ、どの要素にも当たらない指定を除きました。写真は WebP に変え（`hero-editorial-fidelity.jpg` だけは OGP 用に JPG を残す）、使っていない画像を削除しました。ユーザー提供の参考画像は `design/` にあります。
+
 ## GitHub Pagesで公開する
 
 既存リポジトリの`main`へプッシュすると、`.github/workflows/pages.yml`が`public/`をGitHub Pagesへ配信します。新しいリポジトリの作成やPages設定のやり直しは不要です。変更前後は[引継ぎメモ](HANDOFF.md)の確認事項に沿って、特にスマホ表示・LINEリンク・計測を点検してください。GitHubの**Actions**で`Deploy Plus Carport to GitHub Pages`の結果を確認します。
@@ -29,6 +37,8 @@
 ```
 
 LIFF IDや遷移先を変更する場合は、LINE Developersと別リポジトリの相談アプリ側の設定も合わせて確認してください。LINE公式の友だち追加・UTAGEの配信設定とは別です。
+
+`data-line-direct` を付けたリンクは、`public/script.js` がこの URL に書き換えます。`data-plan` があるリンクは `plan` を付けて開きます（例：`…?mode=direct&plan=two-car`）。値は `one-car`・`two-car`・`bike`・`truck`・`deck`・`entrance`・`custom`・`budget` です。相談アプリ側がこの値を読んで最初の選択を済ませます。読まない版の相談アプリでも、`plan` は無視されるだけで相談はできます。
 
 ### 2. 公開前に確定する事業情報
 
@@ -63,20 +73,22 @@ python3 -m http.server 4173 -d public
 ## ファイル構成
 
 - `public/index.html` — LP本体と検索向け情報
-- `public/styles.css` — レスポンシブデザイン
+- `public/lp.css` — LP本体のデザイン（後ろに書いた指定ほど優先。変更はファイルの最後に足す）
+- `public/styles.css` — プライバシーポリシー・加盟店募集ページのデザイン
 - `public/script.js` — CTA・LINE接続・計測イベント
-- `public/planner.js` — 相談内容の選択ロジック
 - `public/privacy.html` — 個人情報の利用目的と施工店への情報提供方針
 - `public/partners.html` — 加盟店・施工パートナー募集ページ
 - `public/robots.txt` — クロール方針とサイトマップURL
 - `public/sitemap.xml` — 公開URLのXMLサイトマップ
-- `public/assets/` — ロゴと画像
+- `public/assets/` — ロゴと画像（表示用は WebP。`hero-editorial-fidelity.jpg` は OGP 用）
+- `design/` — リッチメニューのデザインと、ユーザー提供の参考画像（公開はされない）
+- `tools/add-wbr.py` — 見出しなどに文節の改行候補 `<wbr>` を入れ直す（`python3 -m pip install budoux` のあと `python3 tools/add-wbr.py public/index.html`）
 - `.github/workflows/pages.yml` — GitHub Pages自動公開
 
 ## 公開時の注意
 
 - LINEのボタンクリックは問い合わせ完了ではありません。実際に届いた初回相談数を主KPIとして管理してください。
-- ページ内イベントは `dataLayer` に追加されますが、GA4やGTM自体は接続されていません。
+- ページ内イベントは `dataLayer` に追加されますが、GA4やGTM自体は接続されていません。イベントは `line_outbound_click`（LINE ボタン。`cta_position` と `carport_plan` 付き）と `price_simulator_click`（価格シミュレーターへのリンク）です。
 - 既存の住宅・カーポート画像は完成イメージです。オーダー欄の4枚はAI生成の設計イメージです。実績として紹介する際は、施工主体と掲載許可を確認した実写真に差し替えてください。
 - 施工店へ相談者の個人データを提供する場合は、事前に本人同意を取得し、法令に従って提供記録を作成・保存してください。
 - `public/privacy.html` は現行の事業モデルに合わせた公開用原案です。正式公開前に所在地・代表者・問い合わせ先を追記し、必要に応じて専門家の確認を受けてください。
