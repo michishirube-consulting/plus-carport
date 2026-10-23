@@ -1,5 +1,9 @@
 # プラスカーポート LP｜引継ぎメモ
 
+## 2026-10-23 SNS別の相談入口
+
+Instagram・TikTok・YouTubeに掲載するLPのURL、既存UTAGEリンクとの対応、追加後の相談の進み方は[SNS-LINKS.md](SNS-LINKS.md)。相談ボタンは`/line/start`を経由し、プラン・見積り商品情報を相談へ引き継ぐ。以下の2026-09-30の記載は変更前の記録。
+
 最終確認: 2026-09-30（LP の構成・導線を整理して公開。下の「2026-09-29 の整理」）。**相談アプリ・UTAGEも含む全体の引継ぎ書は、非公開リポジトリ [`plus-carport-consult` の `HANDOFF.md`](https://github.com/michishirube-consulting/plus-carport-consult/blob/main/HANDOFF.md) にあります。** 次の担当者にはこの非公開リポジトリへの閲覧権限も付与してください。
 
 ## このリポジトリが管理する範囲

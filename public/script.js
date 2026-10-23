@@ -25,14 +25,14 @@ function updateStickyCta() {
 }
 
 document.querySelectorAll("[data-simulator-entry]").forEach((link) => {
+  const destination = window.CarportSourceRouting?.simulatorUrl(link.href, window.location.search);
+  if (destination) link.href = destination;
   link.addEventListener("click", () => {
     trackStep("price_simulator_click", link.dataset.position);
   });
 });
 
-// Every LINE button opens the LIFF consultation directly. data-plan tells the
-// consultation form which card the visitor came from (for example plan=two-car),
-// so the visitor does not have to choose the same thing again.
+// SNSごとの友だち追加と、選んだプランを引き継ぐ相談フォームへの入口。
 function configureLineContact() {
   let lineUrl;
   try {
@@ -43,6 +43,7 @@ function configureLineContact() {
     return;
   }
   const hrefFor = (plan) => {
+    if (window.CarportSourceRouting) return window.CarportSourceRouting.consultationUrl(window.location.search, plan);
     const url = new URL(lineUrl.href);
     if (plan && /^[a-z-]{2,24}$/.test(plan)) url.searchParams.set("plan", plan);
     return url.href;
