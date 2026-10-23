@@ -1,5 +1,7 @@
 # SNSに掲載するLPのURL
 
+**2026-10-23 引き継ぎ完了。** 本番反映・3媒体の公開画面確認を実施し、依頼者から2台用の表示・LINE追加・引き継ぎ完了の報告を受け、今回の対応を終了した。詳細と未測定の数値は[相談アプリの完了記録](https://github.com/michishirube-consulting/plus-carport-consult/blob/main/docs/HANDOVER-COMPLETE-2026-10-23.md)。SNS掲載作業の完了とUTAGEのUU・登録数の増分は未確認であり、運用への申し送りとする。
+
 2026-10-23。掲載先ごとに、次のURLをそのまま使用する。
 
 | 掲載先 | URL |

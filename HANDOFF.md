@@ -1,5 +1,7 @@
 # プラスカーポート LP｜引継ぎメモ
 
+**2026-10-23 今回の引き継ぎ対応は完了。** 依頼者の実機報告と受入・終了指示による。掲載用URLは[SNS-LINKS.md](SNS-LINKS.md)、本番反映・確認結果・運用への申し送りは[相談アプリの完了記録](https://github.com/michishirube-consulting/plus-carport-consult/blob/main/docs/HANDOVER-COMPLETE-2026-10-23.md)を参照。以下の記録より優先する。
+
 ## 2026-10-23 SNS別の相談入口
 
 Instagram・TikTok・YouTubeに掲載するLPのURL、既存UTAGEリンクとの対応、追加後の相談の進み方は[SNS-LINKS.md](SNS-LINKS.md)。相談ボタンは`/line/start`を経由し、プラン・見積り商品情報を相談へ引き継ぐ。以下の2026-09-30の記載は変更前の記録。
