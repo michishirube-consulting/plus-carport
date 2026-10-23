@@ -1,5 +1,7 @@
 # プラスカーポート LP
 
+2026-10-23: SNS別の入口を追加。掲載用URLと現在のLINE導線は[SNS-LINKS.md](SNS-LINKS.md)を参照。以下の2026-09-29・09-30のLIFF直行の説明は以前の導線の記録。
+
 プラスカーポートの静的ランディングページです。ビルドは不要で、GitHub Pagesからそのまま公開できます。
 
 **次の担当者は最初に[引継ぎメモ](HANDOFF.md)を読んでください。** 価格シミュレーター・LIFF相談のソースと全体引継ぎ書は、別の非公開リポジトリ[`plus-carport-consult`](https://github.com/michishirube-consulting/plus-carport-consult)にあります。
